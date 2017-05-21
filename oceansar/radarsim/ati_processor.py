@@ -43,7 +43,7 @@ def uwphase(phasor):
 def ati_process(cfg_file, proc_output_file, ocean_file, output_file):
 
     print('-------------------------------------------------------------------')
-    print(time.strftime("- OCEANSAR ATI Processor: [%Y-%m-%d %H:%M:%S]", time.localtime()))
+    print((time.strftime("- OCEANSAR ATI Processor: [%Y-%m-%d %H:%M:%S]", time.localtime())))
     print('-------------------------------------------------------------------')
 
     print('Initializing...')
@@ -170,7 +170,7 @@ def ati_process(cfg_file, proc_output_file, ocean_file, output_file):
         else:
             dist_chan = ant_L/2
     # dist_chan = ant_L/num_ch/2.
-    print('ATI Spacing: %f' % dist_chan)
+    print(('ATI Spacing: %f' % dist_chan))
     inter_chan_shift_dist = dist_chan/(v_ground/prf)
     # Subsample shift in azimuth
     for chind in range(proc_data.shape[0]):
@@ -501,7 +501,7 @@ def ati_process(cfg_file, proc_output_file, ocean_file, output_file):
 
 
     print('----------------------------------------')
-    print(time.strftime("ATI Processing finished [%Y-%m-%d %H:%M:%S]", time.localtime()))
+    print((time.strftime("ATI Processing finished [%Y-%m-%d %H:%M:%S]", time.localtime())))
     print('----------------------------------------')
 
 

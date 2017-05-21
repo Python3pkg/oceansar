@@ -173,7 +173,7 @@ class ConfigFile():
                 elif type(element_value) is bool:
                     file.write('%s=%s\n' % (element, 'True' if element_value else 'False'))
 
-                elif (type(element_value) is str) or (type(element_value) is unicode):
+                elif (type(element_value) is str) or (type(element_value) is str):
                     file.write('%s=%s\n' % (element, element_value))
 
                 elif type(element_value) is list:
@@ -183,7 +183,7 @@ class ConfigFile():
                     file.write('%s=['%element + ','.join('%.2f'%f for f in element_value) + ']\n')
 
                 else:
-                    print(type(element_value))
+                    print((type(element_value)))
                     print(element_value)
                     raise TypeError('Variable type not supported')
 

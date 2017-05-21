@@ -143,7 +143,7 @@ Dx = np.real(np.fft.ifft2(1j*kx_new*kinv_new*wave_coefs))
 Dy = np.real(np.fft.ifft2(1j*ky_new*kinv_new*wave_coefs))
 Dz = np.real(np.fft.ifft2(wave_coefs))
     
-print 'The mean and variance of original Dz are: ', np.mean(Dz), np.var(Dz)
+print('The mean and variance of original Dz are: ', np.mean(Dz), np.var(Dz))
                                                         
 #spectrum_Dz = utils.smooth((np.abs(np.fft.fftshift(np.fft.fft2(Dz))))**2., window_len=7)
 #spectrum_Dz = np.roll(np.roll(spectrum_Dz, -(zp_value/2)*Nx, axis=1), -(zp_value/2)*Ny, axis=0)
@@ -169,7 +169,7 @@ z = mlab.griddata(x_irr.flatten(), y_irr.flatten(), Dz.flatten(), x, y, interp='
 # Remove possible 'masked' values
 z = np.where(z.mask == True, 0.0, z)
 
-print 'The mean and variance of interpolated Dz are: ', np.mean(z), np.var(z)
+print('The mean and variance of interpolated Dz are: ', np.mean(z), np.var(z))
 
 plt.figure()
 plt.hist(Dz.flatten(), bins=1000, normed=True, histtype='step', align='mid', color='blue', label='Original')

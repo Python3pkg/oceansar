@@ -58,7 +58,7 @@ def sarraw(cfg_file, output_file, ocean_file, reuse_ocean_file, errors_file, reu
     ## WELCOME
     if rank == 0:
         print('-------------------------------------------------------------------')
-        print(time.strftime("- OCEANSAR SAR RAW GENERATOR: %Y-%m-%d %H:%M:%S", time.localtime()))
+        print((time.strftime("- OCEANSAR SAR RAW GENERATOR: %Y-%m-%d %H:%M:%S", time.localtime())))
         print('- Copyright (c) Gerard Marull Paretas, Paco Lopez Dekker')
         print('-------------------------------------------------------------------')
 
@@ -449,7 +449,7 @@ def sarraw(cfg_file, output_file, ocean_file, reuse_ocean_file, errors_file, reu
         current_progress = np.int((100*az_step)/az_steps)
         if current_progress != last_progress:
             last_progress = current_progress
-            print('SP,%d,%d,%d' % (rank, size, current_progress))
+            print(('SP,%d,%d,%d' % (rank, size, current_progress)))
 
 
     # MERGE RESULTS
@@ -538,7 +538,7 @@ def sarraw(cfg_file, output_file, ocean_file, reuse_ocean_file, errors_file, reu
         raw_file.set('NRCS_avg', NRCS_avg)
         raw_file.close()
 
-        print(time.strftime("Finished [%Y-%m-%d %H:%M:%S]", time.localtime()))
+        print((time.strftime("Finished [%Y-%m-%d %H:%M:%S]", time.localtime())))
 
 
 if __name__ == '__main__':
